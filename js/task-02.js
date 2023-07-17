@@ -8,13 +8,11 @@ const ingredients = [
 ];
 
 const ulEl = document.getElementById(`ingredients`);
-for (const ingredient of ingredients) {
-  const liEl = document.createElement(`li`);
-  liEl.textContent = ingredient;
-  ulEl.appendChild(liEl);
 
-}
+const markup = ingredients.map((ingredient) => `<li>${ingredient}</li>`)
+.join("");
 
-document.body.appendChild(ulEl);
+
+document.body.insertAdjacentHTML("beforeend", `<ul>${markup}</ul>`);
 
 
